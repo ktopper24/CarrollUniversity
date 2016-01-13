@@ -1,0 +1,11 @@
+﻿<div class="addCourse" ng-controller="AddCourseController">
+    <div class="jumbotron">
+        <h1>Carroll University</h1>
+        <form name="addCourse" data-ng-submit="addCourse()">
+            Course Name: <input type="text" ng-model="course.courseName" />
+            Course Catalog ID: <input type="text" ng-model="course.courseCatalogID" />
+            Professor's Name: <input type="text" ng-model="course.professorName" />
+            <button type="submit" class="btn btn btn-default">Add Course</button>
+        </form>
+    </div>
+</div>
