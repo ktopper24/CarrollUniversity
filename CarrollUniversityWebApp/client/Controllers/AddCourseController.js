@@ -2,10 +2,10 @@
     //Need to put objectType in the angular routes
 
     $scope.reset = function () {
-        $scope.object = {};
+        $scope.course = {};
     };
     $scope.addCourse = function () {
-        $http.post('api/' + $scope.objectType, $routeParams.objectType);
+        $http.post('api/courses', $scope.course);
         $scope.reset();
     }
 
