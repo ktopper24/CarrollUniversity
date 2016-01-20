@@ -1,17 +1,24 @@
-﻿app.controller('AddCourseController', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
-    //Need to put objectType in the angular routes
+﻿app.controller('AddCourseController', ['$scope', '$http', function ($scope, $http) {
 
     $scope.reset = function () {
         $scope.course = {};
     };
+
+    var gotProfessors = function (answer) {
+        $scope.professors = answer.data;
+    };
+
+    var onError = function (reason) {
+        $scope.error = "Error";
+    };
+
     $scope.addCourse = function () {
-        $http.post('api/courses', $scope.course);
+        $http.post('api/course', $scope.course);
         $scope.reset();
-    }
+    };
 
-    //$scope.resetProfessor = function () {
-    //$scope.professor = {};
-    //}
+    $http.get('/api/professor')
+      .then(gotProfessors, onError);
+  
 
-
-}])
+}]);

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace CarrollUniversityWebApp.Models
+namespace CarrollUniversityWebApp.client.Models
 {
     public class ProfessorModel
     {
-        public string professorName { get; set; }
-        public string userName { get; set; }
+        public string Professor_Name { get; set; }
+        public int Professor_ID { get; set; }
+        public string username { get; set; }
         public string password { get; set; }
     }
 }
