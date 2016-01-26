@@ -203,9 +203,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="client\Models\BuildingModel.cs" />
-    <Compile Include="client\Models\SectionModel.cs" />
-    <Compile Include="client\Models\StudentModel.cs" />
+    <Compile Include="server\Models\BuildingModel.cs" />
+    <Compile Include="server\Models\SectionModel.cs" />
+    <Compile Include="server\Models\StudentModel.cs" />
     <Compile Include="server\Controllers\BuildingController.cs" />
     <Compile Include="server\Controllers\HomeController.cs" />
     <Compile Include="server\Controllers\CourseController.cs" />
@@ -213,58 +213,59 @@
     <Compile Include="server\Controllers\SectionController.cs" />
     <Compile Include="server\Controllers\StudentController.cs" />
     <Compile Include="server\Controllers\StudentSectionController.cs" />
-    <Compile Include="server\Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="client\Models\ProfessorModel.cs" />
-    <Compile Include="client\Models\CourseModel.cs" />
+    <Compile Include="server\Models\ProfessorModel.cs" />
+    <Compile Include="server\Models\CourseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Utils\DatabaseManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="client\bootstrap.css" />
-    <Content Include="client\bootstrap.min.css" />
-    <Content Include="client\Controllers\AddBuildingController.js" />
-    <Content Include="client\Controllers\AddCourseController.js" />
-    <Content Include="client\Controllers\AddSectionController.js" />
-    <Content Include="client\Controllers\ProfessorHomeController.js" />
-    <Content Include="client\Controllers\RegisterProfessorController.js" />
-    <Content Include="client\Controllers\RegisterStudentController.js" />
-    <Content Include="client\Controllers\SignUpController.js" />
-    <Content Include="client\Scripts\angular.min.js" />
-    <Content Include="client\templates\addBuilding.html" />
-    <Content Include="client\templates\addSection.html" />
-    <Content Include="client\templates\professor.html" />
-    <Content Include="client\templates\signUp.html" />
-    <Content Include="client\templates\home.html" />
-    <Content Include="client\templates\addCourse.html" />
-    <Content Include="client\templates\registerProfessor.html" />
-    <Content Include="client\templates\registerStudent.html" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Controllers\AddBuildingController.js" />
+    <Content Include="Content\Controllers\AddCourseController.js" />
+    <Content Include="Content\Controllers\AddSectionController.js" />
+    <Content Include="Content\Controllers\ProfessorHomeController.js" />
+    <Content Include="Content\Controllers\RegisterProfessorController.js" />
+    <Content Include="Content\Controllers\RegisterStudentController.js" />
+    <Content Include="Content\Controllers\SignUpController.js" />
+    <Content Include="Content\Controllers\StudentHomeController.js" />
+    <Content Include="Content\Scripts\angular.min.js" />
+    <Content Include="Content\templates\addBuilding.html" />
+    <Content Include="Content\templates\addSection.html" />
+    <Content Include="Content\templates\professor.html" />
+    <Content Include="Content\templates\signUp.html" />
+    <Content Include="Content\templates\home.html" />
+    <Content Include="Content\templates\addCourse.html" />
+    <Content Include="Content\templates\registerProfessor.html" />
+    <Content Include="Content\templates\registerStudent.html" />
+    <Content Include="Content\templates\student.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="client\Scripts\ai.0.15.0-build58334.js" />
-    <Content Include="client\Scripts\ai.0.15.0-build58334.min.js" />
-    <Content Include="client\Scripts\angular-route.js" />
-    <Content Include="client\Scripts\bootstrap.js" />
-    <Content Include="client\Scripts\bootstrap.min.js" />
+    <Content Include="Content\Scripts\ai.0.15.0-build58334.js" />
+    <Content Include="Content\Scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Content\Scripts\angular-route.js" />
+    <Content Include="Content\Scripts\bootstrap.js" />
+    <Content Include="Content\Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="client\Scripts\angularRoutes.js" />
-    <None Include="client\Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="client\Controllers\HomeController.js" />
-    <Content Include="client\Scripts\jquery-1.10.2.js" />
-    <Content Include="client\Scripts\jquery-1.10.2.min.js" />
-    <None Include="client\Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="client\Scripts\jquery.validate.js" />
-    <Content Include="client\Scripts\jquery.validate.min.js" />
-    <Content Include="client\Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="client\Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="client\Scripts\modernizr-2.6.2.js" />
-    <Content Include="client\Scripts\respond.js" />
-    <Content Include="client\Scripts\respond.min.js" />
+    <Content Include="Content\Scripts\angularRoutes.js" />
+    <None Include="Content\Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Content\Controllers\HomeController.js" />
+    <Content Include="Content\Scripts\jquery-1.10.2.js" />
+    <Content Include="Content\Scripts\jquery-1.10.2.min.js" />
+    <None Include="Content\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Content\Scripts\jquery.validate.js" />
+    <Content Include="Content\Scripts\jquery.validate.min.js" />
+    <Content Include="Content\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Content\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\Scripts\modernizr-2.6.2.js" />
+    <Content Include="Content\Scripts\respond.js" />
+    <Content Include="Content\Scripts\respond.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -272,8 +273,8 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="client\Site.css" />
-    <Content Include="client\Scripts\_references.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\Scripts\_references.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -286,7 +287,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="client\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Content\Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

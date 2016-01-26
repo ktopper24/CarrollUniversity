@@ -1,4 +1,4 @@
-﻿using CarrollUniversityWebApp.client.Models;
+﻿using CarrollUniversityWebApp.server.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -254,7 +254,7 @@ namespace CarrollUniversityWebApp.Utils
 
         public ProfessorModel GetProfessorUser(string username)
         {
-            var queryString = string.Format("SELECT Professor_Name, Professor_ID FROM Professors WHERE username = '{0}'", username);
+            var queryString = string.Format("SELECT Professor_Name, Professor_ID, username, password FROM Professors WHERE username = '{0}'", username);
             var professor = new ProfessorModel();
 
             sqlConnection1.Open();
@@ -267,7 +267,9 @@ namespace CarrollUniversityWebApp.Utils
                 {
                     var Professor_Name = reader.GetString(0);
                     var Professor_ID = reader.GetInt32(1);
-                    professor = new ProfessorModel { Professor_Name = Professor_Name, Professor_ID = Professor_ID};
+                    var user = reader.GetString(2);
+                    var password = reader.GetString(3);
+                    professor = new ProfessorModel { Professor_Name = Professor_Name, Professor_ID = Professor_ID, username = user, password = password};
                 }
             }
 
@@ -279,7 +281,7 @@ namespace CarrollUniversityWebApp.Utils
         public IEnumerable<SectionModel> GetProfessorCourses(int id2)
         {
             List<SectionModel> professorSections = new List<SectionModel>();
-            var queryString = string.Format("SELECT Courses.Course_Name, Professors.Professor_Name, Sections.Section_Name, Sections.Time, Buildings.Building_Name FROM Sections JOIN Buildings ON Sections.Building_ID = Buildings.Building_ID JOIN Courses ON Sections.Course_Database_ID = Courses.Course_Database_ID JOIN Professors ON Professors.Professor_ID = Courses.Professor_ID WHERE Professor.Professor_ID = {0}", id2);
+            var queryString = string.Format("SELECT Courses.Course_Name, Professors.Professor_Name, Sections.Section_Name, Sections.Time, Buildings.Building_Name FROM Sections JOIN Buildings ON Sections.Building_ID = Buildings.Building_ID JOIN Courses ON Sections.Course_Database_ID = Courses.Course_Database_ID JOIN Professors ON Professors.Professor_ID = Courses.Professor_ID WHERE Professors.Professor_ID = {0}", id2);
             sqlConnection1.Open();
             var reader = GetDatabaseResults(queryString);
 

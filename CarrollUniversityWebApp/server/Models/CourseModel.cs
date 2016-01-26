@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace CarrollUniversityWebApp.client.Models
+namespace CarrollUniversityWebApp.server.Models
 {
     public class CourseModel
     {

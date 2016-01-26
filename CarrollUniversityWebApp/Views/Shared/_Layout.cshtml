@@ -9,20 +9,21 @@
 </head>
 
          <body>
-             @RenderBody();
+             @RenderBody()
     
 
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
-        @Scripts.Render("~/client/Scripts/angularRoutes.js")
-        @Scripts.Render("~/client/Controllers/HomeController.js")
-        @Scripts.Render("~/client/Controllers/AddCourseController.js")
-        @Scripts.Render("~/client/Controllers/RegisterStudentController.js")
-        @Scripts.Render("~/client/Controllers/RegisterProfessorController.js")
-        @Scripts.Render("~/client/Controllers/AddSectionController.js")
-        @Scripts.Render("~/client/Controllers/ProfessorHomeController.js")
-        @Scripts.Render("~/client/Controllers/AddBuildingController.js")
-        @Scripts.Render("~/client/Controllers/SignUpController.js")
+        @Scripts.Render("~/Content/Scripts/angularRoutes.js")
+        @Scripts.Render("~/Content/Controllers/HomeController.js")
+        @Scripts.Render("~/Content/Controllers/AddCourseController.js")
+        @Scripts.Render("~/Content/Controllers/RegisterStudentController.js")
+        @Scripts.Render("~/Content/Controllers/RegisterProfessorController.js")
+        @Scripts.Render("~/Content/Controllers/AddSectionController.js")
+        @Scripts.Render("~/Content/Controllers/StudentHomeController.js")
+        @Scripts.Render("~/Content/Controllers/ProfessorHomeController.js")
+        @Scripts.Render("~/Content/Controllers/AddBuildingController.js")
+        @Scripts.Render("~/Content/Controllers/SignUpController.js")
         @RenderSection("scripts", required: false)
     </body>
 

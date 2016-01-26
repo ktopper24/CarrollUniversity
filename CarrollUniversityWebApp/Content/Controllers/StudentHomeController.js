@@ -1,9 +1,5 @@
-﻿app.controller('HomeController', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+﻿app.controller('StudentHomeController', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
 
-    $scope.showSections = function (section) {
-        $scope.currentSection = section;
-        $scope.hideSections = false;
-    };
 
     var gotCourses = function (answer) {
         $scope.sections = answer.data;
@@ -16,12 +12,13 @@
         $scope.error = "Error";
     };
 
-
+    $scope.reset = function () {
+        $scope.student = {};
+    };
 
 
     if ($routeParams.id) {
         $scope.hidelogin = true;
-        $scope.hideSections = true;
         $scope.hideSignUp = false;
 
         $http.get('api/course/' + $routeParams.id)
@@ -31,7 +28,6 @@
     else {
         $scope.hidelogin = false;
         $scope.hideCourses = true;
-        $scope.hideSections = true;
         $scope.hideSignUp = true;
 
         $scope.login = function () {
@@ -42,22 +38,25 @@
         var gotStudent = function (answer) {
             $scope.user = answer.data;
 
-            if ($scope.user.Password) {
+            if ($scope.user.User) {
                 if ($scope.student.password == $scope.user.Password) {
                     alert("Log in successful");
+                    $scope.hidelogin = true;
+                    $scope.hideSignUp = false;
+
+                    $http.get('api/course/' + $scope.user.Student_ID)
+                        .then(gotCourses, onError);
                 }
                 else {
                     alert("Invalid Password");
+                    $scope.reset();
                 }
             }
             else {
                 alert("Invalid Username, please register as a user");
+                $scope.reset();
             }
-            $scope.hidelogin = true;
-            $scope.hideSignUp = false;
 
-            $http.get('api/course/' + $scope.user.Student_ID)
-                .then(gotCourses, onError);
         };
 
     }

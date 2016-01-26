@@ -1,4 +1,4 @@
-﻿using CarrollUniversityWebApp.client.Models;
+﻿using CarrollUniversityWebApp.server.Models;
 using CarrollUniversityWebApp.Utils;
 using System;
 using System.Collections.Generic;

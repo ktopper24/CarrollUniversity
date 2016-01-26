@@ -2,37 +2,41 @@
 
 app.config(function ($routeProvider) {
     $routeProvider
-        .when('/:id?', {
+        .when('/', {
             controller: 'HomeController',
-            templateUrl: '/client/templates/home.html'
+            templateUrl: '/Content/templates/home.html'
         })
-        .when('/professor/:id?', {
+        .when('/student/:id?', {
+            controller: 'StudentHomeController',
+            templateUrl: '/Content/templates/student.html'
+        })
+        .when('/professor/:id3?', {
             controller: 'ProfessorHomeController',
-            templateUrl: '/client/templates/professor.html'
+            templateUrl: '/Content/templates/professor.html'
         })
         .when('/create/course', {
             controller: 'AddCourseController',
-            templateUrl: '/client/templates/addCourse.html'
+            templateUrl: '/Content/templates/addCourse.html'
         })
         .when('/create/building', {
             controller: 'AddBuildingController',
-            templateUrl: '/client/templates/addBuilding.html'
+            templateUrl: '/Content/templates/addBuilding.html'
         })
         .when('/create/section', {
             controller: 'AddSectionController',
-            templateUrl: '/client/templates/addSection.html'
+            templateUrl: '/Content/templates/addSection.html'
         })
         .when('/register/professor', {
             controller: 'RegisterProfessorController',
-            templateUrl: '/client/templates/registerProfessor.html'
+            templateUrl: '/Content/templates/registerProfessor.html'
         })
         .when('/register/student', {
             controller: 'RegisterStudentController',
-            templateUrl: '/client/templates/registerStudent.html'
+            templateUrl: '/Content/templates/registerStudent.html'
         })
         .when('/signUp/:id2', {
             controller: 'SignUpController',
-            templateUrl : '/client/templates/signUp.html'
+            templateUrl: '/Content/templates/signUp.html'
         })
         .otherwise({
             redirectTo: '/'
